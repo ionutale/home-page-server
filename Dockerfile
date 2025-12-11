@@ -9,6 +9,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 RUN pnpm build
+ENV CI=true
 RUN pnpm prune --prod
 
 FROM node:22-alpine
